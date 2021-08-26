@@ -39,3 +39,42 @@ Create TABLE dept_emp(
 );
 
 select * from dept_emp;
+
+-- Create a dept_emp table 
+
+Drop TABLE dept_manager;
+
+Create TABLE dept_manager(
+	emp_no INT NOT NULL,
+	dept_no VARCHAR NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
+);
+
+select * from dept_manager;
+
+-- Create a dept_emp table 
+
+Drop TABLE salaries;
+
+Create TABLE salaries(
+	emp_no INT NOT NULL,
+	salary INT NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+select * from salaries;
+
+-- Create a titles table 
+
+Drop TABLE titles;
+
+Create TABLE titles(
+	emp_no VARCHAR NOT NULL,
+	title_id VARCHAR NOT NULL,
+	title VARCHAR NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+select * from titles;
+
